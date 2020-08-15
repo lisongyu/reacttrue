@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 //引入全局样式
 import './assets/styles/core.less'
 import 'normalize.css'
-import App from './pages/HookPage'
+import App from './App'
 ReactDOM.render( <
   App / > ,
   document.getElementById('root')
