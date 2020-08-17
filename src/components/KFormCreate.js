@@ -28,6 +28,9 @@ export default function KFormCreate(Cmp){
         })
       }
     };
+    getFieldsValue=()=>{
+      return {...this.state}
+    }
     render(){
       return (
         <div className="border">
