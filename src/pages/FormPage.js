@@ -39,6 +39,7 @@ export default class FormPage extends Component {
       name,
       password
     } = this.state
+
     return ( <
       div >
       <
