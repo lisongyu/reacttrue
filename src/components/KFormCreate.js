@@ -8,6 +8,7 @@ export default function KFormCreate(Cmp){
       this.state = {
          value:''
       }
+      this.options={}
     }
     handleChange=(e)=>{
       //setState name value
@@ -18,7 +19,8 @@ export default function KFormCreate(Cmp){
 
       })
     }
-    getFieldDecorator=(field,option)=>{
+    getFieldDecorator = (field, option) => {
+      this.options[field]=option
       return InputCmp=>{
         // 克隆一份
         return React.cloneElement(InputCmp,{
@@ -28,8 +30,30 @@ export default function KFormCreate(Cmp){
         })
       }
     };
+    getFieldValue = field => {
+      return this.state[field]
+    }
     getFieldsValue=()=>{
       return {...this.state}
+    }
+    validateFields = (callback) => {
+      // 校验错误信息
+      const errors = {};
+      const state={...this.state}
+      for (let name in this.options) {
+        if (this.state[name] === undefined) {
+          // 没有输入，判断为不合法
+          errors[name]='error'
+        }
+      }
+      if (JSON.stringify(errors) === '{}') {
+        // 合法
+        callback(undefined, state);
+      } else {
+        callback(errors,state)
+      }
+
+      
     }
     render(){
       return (
@@ -37,6 +61,8 @@ export default function KFormCreate(Cmp){
           <Cmp 
             getFieldDecorator={this.getFieldDecorator}
             getFieldsValue={this.getFieldsValue}
+            getFieldValue={this.getFieldValue}
+            validateFields={this.validateFields}
           />
         </div>
       )

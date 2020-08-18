@@ -69,8 +69,8 @@ export default class FormPage extends Component {
       onChange = {
         this.changePassword
       }
-      / > <
-      /Form.Item> <
+      / > < /
+      Form.Item > <
       Button type = "primary"
       onClick = {
         this.submit
