@@ -1,13 +1,13 @@
 import React from 'react'
 // import HocPage from './pages/HocPage'
-import MyFormPage from './pages/MyFormPage'
+import ContextPage from './pages/ContextPage'
 
 
 function App() {
   return ( <
     div className = "App" > {
-      /* 表单组件使用create */ } <
-    MyFormPage / >
+      /* context上下文 */ } <
+      ContextPage / >
     <
     /div>
   )
