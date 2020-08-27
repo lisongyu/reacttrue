@@ -11,6 +11,9 @@ export default class Dialog extends Component {
 
     }
   }
+  componentWillUnmount () {
+    window.document.body.removeChild(this.node)
+  }
 
   render () {
     return createPortal(
