@@ -1,4 +1,4 @@
 import React from 'react'
-import App from './pages/ContextPage'
+import App from './pages/Compose'
 
 export default App
