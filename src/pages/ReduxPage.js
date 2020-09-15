@@ -7,12 +7,22 @@ export default class ReduxPage extends Component {
       this.forceUpdate()
     })
   }
+
+  asyAdd = () => {
+    store.dispatch(dispatch => {
+      setTimeout(() => {
+        dispatch({ type: 'ADD' })
+      }, 1000)
+    })
+  }
   render () {
     return (
       <div>
         <h3>ReduxPage</h3>
         <p>{store.getState()}</p>
         <button onClick={() => store.dispatch({ type: 'ADD' })}>Add</button>
+        <button onClick={() => store.dispatch({ type: 'MINUS' })}>minus</button>
+        <button onClick={this.asyAdd}>asyAdd</button>
       </div>
     )
   }

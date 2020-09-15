@@ -5,7 +5,12 @@ import ReactDOM from 'react-dom'
 import './assets/styles/core.less'
 import 'normalize.css'
 import App from './App'
-ReactDOM.render( <
-  App / > ,
+import { Provider } from "react-redux"
+import store from './store'
+ReactDOM.render(
+  <Provider store={store}>
+    <App  />
+  </Provider>
+  ,
   document.getElementById('root')
 )
