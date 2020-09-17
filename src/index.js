@@ -6,10 +6,11 @@ import './assets/styles/core.less'
 import 'normalize.css'
 import App from './App'
 import { Provider } from "react-redux"
+// import { Provider } from './pages/kReactRedux'
 import store from './store'
 ReactDOM.render(
   <Provider store={store}>
-    <App  />
+    <App />
   </Provider>
   ,
   document.getElementById('root')

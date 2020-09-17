@@ -1,9 +1,11 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore } from 'redux'
 // import { createStore, applyMiddleware } from './kRedux'
 // 定义state初始化
-import thunk from "redux-thunk"
-import logger from "redux-logger"
+// import thunk from "redux-thunk"
+// import logger from "redux-logger"
 function counterReducer (state = 0, action) {
+  console.log(action)
+  console.log(state)
   switch (action.type) {
     case 'ADD':
       return state + 1;
@@ -13,8 +15,8 @@ function counterReducer (state = 0, action) {
       return state
   }
 }
-const store = createStore(counterReducer, applyMiddleware(logger, thunk))
-
+// const store = createStore(counterReducer, applyMiddleware(logger, thunk))
+const store = createStore(counterReducer)
 export default store;
 
 // function logger () {
